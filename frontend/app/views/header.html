@@ -1,0 +1,15 @@
+<div ng-controller="HeaderCtrl"  class="header">
+  <div class="navbar navbar-default" ng-show="isAuthenticated()" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Gestão de condomínios</a>
+      </div>
+        <ul class="nav navbar-nav pull-right">
+          <li ui-sref-active="active">
+            <a ui-sref="main">Principal</a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="logout">Logout</a>
+          </li>
+        </ul>
+  </div>
+</div>

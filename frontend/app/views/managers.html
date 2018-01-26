@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col-lg-2 col-lg-offset-10">
+    <button class="btn btn-primary btn-sm btn-block login-button" ng-click="addManager()">Adicionar</button>
+  </div>
+</div>
+
+<div class="alert alert-danger content-margin-top" ng-show="managers.length == 0" role="alert">
+  <strong>Atenção! </strong>Clique no botão para adicionar gerentes!
+</div>
+
+  <div class="repeat-content" data-ng-repeat="(index, manager) in managers">
+    <div class="content-group row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" ng-model="manager.name" placeholder="Nome do gerente">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+          <input type="email" class="form-control" ng-model="manager.email" placeholder="E-mail do gerente" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-group row content-margin-top">
+      <div class="col-lg-4 ">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" ng-model="manager.phone" placeholder="Telefone do gerente"/>
+        </div>
+      </div>
+      <div class="col-lg-2 col-lg-offset-6">
+        <button class="btn btn-danger btn-sm btn-block login-button" ng-click="removeManager(index)">Remover</button>
+      </div>
+    </div>
+  </div>
+
+<div class="row content-margin-top">
+  <div class="col-lg-3 col-lg-offset-9">
+    <button type="submit" ng-disabled="managers.length == 0" class="btn btn-primary btn-lg btn-block login-button" ng-click="save()">Salvar</button>
+  </div>
+</div>
+

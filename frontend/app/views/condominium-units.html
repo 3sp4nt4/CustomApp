@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-lg-2 col-lg-offset-10">
+    <button class="btn btn-primary btn-sm btn-block login-button" ng-click="addUnit()">Adicionar</button>
+  </div>
+</div>
+
+<div class="alert alert-danger content-margin-top" ng-show="units.length == 0" role="alert">
+  <strong>Atenção! </strong>Clique no botão para adicionar unidades!
+</div>
+
+<div class="repeat-content" data-ng-repeat="(index, unit) in units">
+  <div class="content-group row">
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.codCond" placeholder="Cod. do Condominio">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.codBlock" placeholder="Cod. do Bloco">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.codUnit" placeholder="Cod. da Unidade">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.clientName" placeholder="Nome do Cliente">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.address" placeholder="End. do Cliente">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-pin fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressNumber" placeholder="Nr. do End.">
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-signs" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressNeighborhood" placeholder="Bairro">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-o fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressCity" placeholder="Cidade">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressState" placeholder="Estado">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-flag fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressPostalCode" placeholder="CEP">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="custom-select custom-select-lg mb-3">
+        <select class="form-control" ng-model="unit.addressContactType">
+          <option value="1">Telefone</option>
+          <option value="6">E-mail</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="unit.addressContact" placeholder="Contato">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-2 col-lg-offset-10">
+      <button class="btn btn-danger btn-sm btn-block login-button" ng-click="removeUnit(index)">Remover</button>
+    </div>
+  </div>
+</div>
+
+<div class="row content-margin-top">
+  <div class="col-lg-3 col-lg-offset-9">
+    <button type="submit" ng-disabled="units.length == 0" class="btn btn-primary btn-lg btn-block login-button" ng-click="save()">Salvar</button>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-lg-2 col-lg-offset-10">
+    <button class="btn btn-primary btn-sm btn-block login-button" ng-click="addCondominium()">Adicionar</button>
+  </div>
+</div>
+
+<div class="alert alert-danger content-margin-top" ng-show="condominiums.length == 0" role="alert">
+  <strong>Atenção! </strong>Clique no botão para adicionar condominios!
+</div>
+
+<div class="repeat-content" data-ng-repeat="(index, condominium) in condominiums">
+  <div class="content-group row">
+    <div class="col-lg-3">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="true" ng-model="condominium.active" aria-label="Condominio Ativo?"><strong>Cond. Ativo?</strong>
+        </label>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.code" placeholder="Cod. do Cond.">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.name" placeholder="Nome do Condominio">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.cnpj" placeholder="CNPJ">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.address" placeholder="End. do Cliente">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-pin fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressNumber" placeholder="Nr. do End.">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressExt" placeholder="Complemento">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-flag fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressPostalCode" placeholder="CEP">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-signs" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressNeighborhood" placeholder="Bairro">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-5">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-o fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressCity" placeholder="Cidade">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressState" placeholder="Estado">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.managerCode" placeholder="Cod. Gerente">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" disabled placeholder="Nome do gerente">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.apartmentsAmount" placeholder="Qtd. Aptos.">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.setstAmount" placeholder="Qtd. Cjtos.">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-group row content-margin-top">
+    <div class="col-lg-3">
+      <div class="custom-select custom-select-lg mb-3">
+        <select class="form-control" ng-model="condominium.addressContactType">
+          <option value="1">Telefone</option>
+          <option value="6">E-mail</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" ng-model="condominium.addressContact" placeholder="Contato">
+      </div>
+    </div>
+    <div class="col-lg-2 col-lg-offset-3">
+      <button class="btn btn-danger btn-sm btn-block login-button" ng-click="removeCondominium(index)">Remover</button>
+    </div>
+  </div>
+</div>
+
+<div class="row content-margin-top">
+  <div class="col-lg-3 col-lg-offset-9">
+    <button type="submit" ng-disabled="condominiums.length == 0" class="btn btn-primary btn-lg btn-block login-button" ng-click="save()">Salvar</button>
+  </div>
+</div>
